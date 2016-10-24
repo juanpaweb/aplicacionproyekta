@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <style>
+
+
+        </style>
+	
+		<script src="js/jquery-1.4.min.js"></script>
+		<script src="js/jquery.speedometer.js"></script>
+		<script src="js/jquery.jqcanvas-modified.js"></script>
+		<script src="js/excanvas-modified.js"></script>
+        
+	<script>
+
+		$(function(){
+			$('#test').speedometer();
+
+			$('.changeSpeedometer').click(function(){
+				$('#test').speedometer({ percentage: $('.speedometer').val() || 0 });
+			});
+
+		});
+
+
+		
+	</script>		
+		
+
+	
+    </head>
+
+	
+	 <body id="int" class="resultado">
+        <div class="div_contenedor">
+            <header>
+                <nav>
+                    <div class="div_botones">
+                    <a class="btn-home" href="scoring.html"></a></div>
+                </nav>
+                <h1>Análisis<br>de crédito</h1>
+            </header>
+        
+
+
+		
+             <section>
+                <!--RESULTADO-->
+                <div class="analisis">
+                    
+                    <div class="tacometro_01" >
+                        <div  id="test">100</div>
+                    </div>
+                    <h3>Default</h3>
+                    <div class="tacometro_02">
+                        <div class="aguja_02"></div>
+                        <div class="semasforo">
+                            <div class="verde_off"></div>
+                            <div class="amarillo"></div>
+                            <div class="rojo_off"></div>
+                        </div>
+                    </div>
+                    <h3>Calidad del credito</h3>
+                    
+                </div>
+                <!--END RESULTADO-->
+            </section>
+            <footer>
+                
+            </footer>
+        </div>
+           
+
+
+
+
+
+
+
+
+</body>
+</html>

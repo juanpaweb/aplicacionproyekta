@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+<script type="text/javascript"  src="cordova.js"></script>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Proyekta Analyzer</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+ <link rel="stylesheet" href="jqcss.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<link rel="stylesheet" href="css/stylesheets/style.css">
+<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+
+<!-- Favicons -->
+<link rel="icon" href="img/favicon.png">
+<link rel="appl∫e-touch-icon" href="img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72"
+	href="img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114"
+	href="img/apple-touch-icon-114x114.png">
+	<script>
+	if (localStorage.getItem("usuariolog") == null) {
+		// alert(localStorage.getItem("usuariolog"))
+		//localStorage.clear();
+		window.location.href = "index.html";
+	}
+</script>
+</head>
+<body class="no-scroll">
+	<!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+	<!--menu-->
+	<div id="menu" class="menu-principal">
+		<ul>
+			<li>MENÚ</li>
+			<li><a href="search.html" class="indicadores">Indicadores sector real</a></li>
+			<li><a href="app/index.html" class="analisis">Analisis de
+					crédito</a></li>
+			<li><a href="salir.html" class="analisis" target="_parent">Salir</a></li>
+		</ul>
+	</div>
+	<!--end menu-->
+	<!-- Add your site or application content here -->
+	<div id="container" class="div_contenido_int">
+		<div id="topbar" class="slide">
+			<a id="menu-button">Menu</a> <a id="btn_despliegue_usser"
+				class="img-usser"> <img src="img/img-usser.png" alt="">
+			</a> <span class="divisor"></span> <a id="btn_search"
+				class="btn_despliegue_search"></a>
+			<p class="txt_busqueda">
+				Buscar por<br>empresas
+			</p>
+		</div>
+		<div id="wrapper" class="slide">
+			<div class="div_usser">
+				<a><script>
+					document.write(localStorage.getItem("usernombre"))
+				</script></a> <a href="" class="close" id="btn_close_usser"></a>
+			</div>
+			<div class="div_busqueda">
+				<label for="empresas" class="label_busqueda">Ingrese el NIT
+					o nombre de la empresa</label> <a href="" class="close" id="btn_close_search"></a>
+				<div class="clearfix"></div>
+				<ul class="li_search">
+					<li><form action="" method="post" id="busqueda"
+							name="busqueda">
+							<div>
+								<input name="nit" type="text" id="nit">
+
+							</div></li>
+					<li><input type="submit" value="Buscar" name="buscar">
+					</li>
+					</form>
+				</ul>
+			</div>
+			<div class="div_logo div_logo_int">
+				<a class="logo"></a>
+				<div class="div_contenido">
+					<div class="menu-principal-contenido">
+						<ol>
+							<li><script>
+							if (localStorage.getItem("nit") != null) {
+								document.write(localStorage.getItem("nombre"))
+								
+							}else{
+								document.write("EMPRESA")
+							}
+								
+							</script></li>
+							<li><p>NIT</p>
+								<p>
+									<script>
+									if (localStorage.getItem("nit") != null) {
+										document.write(localStorage.getItem("nit"))
+										
+									}
+									</script>
+								</p></li>
+							<li><p>CIUDAD</p>
+								<p>
+									<script>
+									if (localStorage.getItem("nit") != null) {
+										document.write(localStorage.getItem("ciudad"))
+										
+									}
+									</script>
+								</p></li>
+                                <li><p>CIIU</p>
+								<p>
+									<script>
+									if (localStorage.getItem("nit") != null) {
+										document.write(localStorage.getItem("ciiu"))
+										
+									}
+									</script>
+								</p></li>
+							<li><script>
+								if (localStorage.getItem("nit") != null) {
+								  document.write('<a href="resultados.html">VER INDICADORES (En miles de pesos)</a> &nbsp;&nbsp;<a href="pdf.php?id='+localStorage.getItem("nit")+'" onclick="window.open(this.href,"_system", "location=no");return false"><img src="img/pdf.png" width="45" height="45"></a>');
+									
+								}
+							</script></li>
+						</ol>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	</div>
+	<script>
+		window.jQuery
+				|| document
+						.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')
+	</script>
+	<script type="text/javascript" language="javascript"
+		src="js/jquery.carouFredSel-6.2.1-packed.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+
+	<script>
+		$('#busqueda')
+				.submit(
+						function() {
+
+							// recolecta nit ingresado 
+							var datosNit = $("#nit").val()
+
+							if (datosNit == null || datosNit.length == 0
+									|| /^\s+$/.test(datosNit)) {
+								alert("Ingrese el NIT.")
+								return false;
+							}
+
+							//if (isNaN(datosNit)) {
+							//	alert("Ingrese solo numeros.")
+							//	return false;
+						//	}
+							//alert(datosNit )
+							archivoValidacion = "http://proyekta.com.co/proyektaapp/server/search.php?jsoncallback=?"
+
+							$
+									.getJSON(archivoValidacion, {
+										nit : datosNit
+									})
+									.done(
+											function(respuestaServer) {
+
+												if (respuestaServer.validacion == "ok") {
+
+													/// si la empresa existe guarda la información en local
+
+													localStorage
+															.setItem(
+																	"nit",
+																	respuestaServer.nit);
+													localStorage
+															.setItem(
+																	"nombre",
+																	respuestaServer.nombre);
+													localStorage
+															.setItem(
+																	"ciudad",
+																	respuestaServer.ciudad);
+													localStorage
+															.setItem(
+																	"dpto",
+																	respuestaServer.dpto);
+													localStorage
+															.setItem(
+																	"ciiu",
+																	respuestaServer.ciiu);
+													window.location.href = "search.html";
+
+												} else {
+
+													/// ejecutar una conducta cuando la validacion falla
+													alert(respuestaServer.mensaje)
+												}
+
+											})
+							return false;
+						})
+	</script>
+	<script>
+	/*  jQuery ready function. Specify a function to execute when the DOM is fully loaded.  */
+	$(document).ready(
+	  
+	  /* This is the function that will get executed after the DOM is fully loaded */
+	  function () {
+	    
+	  /* binding the text box with the jQuery Auto complete function. */
+	    $( "#nit" ).autocomplete({
+	    	
+	    	
+	      /*Source refers to the list of fruits that are available in the auto complete list. */
+	      source:'../proyektaapp/server/auto.php',
+	      /* auto focus true means, the first item in the auto complete list is selected by default. therefore when the user hits enter,
+	      it will be loaded in the textbox */
+	      autoFocus: true ,
+
+	    });
+	  
+	  
+	  
+	  
+	  }
+
+	);
+	</script>
+
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	<!--script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script-->
+</body>
+</html>

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title></title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/main.css">
+<script src="cordova-2.7.0.js"></script>
+<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+<script language='javascript'>
+	var variableGlobal =0;
+	var valTipo = 0
+	var valNacimiento = 0
+	var valEdad = 0
+	var valCentrales = 0
+	var valGarantia = 0
+	var valIngresos = 0
+	var valListas = 0
+	var valDeclarante = 0
+	var valJudiciales = 0
+	function valida(dato, dato2) {
+
+		// recolecta los valores que inserto el usuario
+		var peso = dato2
+		var puntos = dato
+		var total = 0
+		var tipopersona = ""
+		archivoValidacion = "http://proyekta.com.co/modulo1/validacion_de_datos.php?jsoncallback=?"
+
+		///validacion duplicado
+		switch (peso) {
+		case "medtipo":
+			if (valTipo != 0) {
+				variableGlobal= variableGlobal - valTipo;
+				window.localStorage['variableGlobals'] = Number(window.localStorage.variableGlobals) - Number(window.localStorage.valTipos);
+				
+			} 
+			break;
+		case "mednacimiento":
+			if (valNacimiento != 0) {
+				variableGlobal= variableGlobal - valNacimiento;
+				window.localStorage['variableGlobals'] = Number(window.localStorage.variableGlobals) - Number(window.localStorage.valNacimientos);
+			} 
+			break;
+		case "mededad":
+			if (valEdad != 0) {
+				variableGlobal= variableGlobal - valEdad;
+				window.localStorage['variableGlobals'] = Number(window.localStorage.variableGlobals) - Number(window.localStorage.valEdads);
+			} 
+			break;
+		case "medcentral":
+			if (valCentrales != 0) {
+				variableGlobal= variableGlobal - valCentrales;
+				window.localStorage['variableGlobals'] = Number(window.localStorage.variableGlobals) - Number(window.localStorage.valCentraless);
+			} 
+			break;
+		case "medgarantia":
+			if (valGarantia != 0) {
+				variableGlobal= variableGlobal - valGarantia;
+				window.localStorage['variableGlobals'] = Number(window.localStorage.variableGlobals) - Number(window.localStorage.valGarantias);
+			} 
+			break;
+		case "medingresos":
+			if (valIngresos != 0) {
+				variableGlobal= variableGlobal - valIngresos;
+				window.localStorage['variableGlobals'] = Number(window.localStorage.variableGlobals) - Number(window.localStorage.valIngresoss);
+			} 
+			break;
+		case "medlistasr":
+			if (valListas != 0) {
+				variableGlobal= variableGlobal - valListas;
+				window.localStorage['variableGlobals'] = Number(window.localStorage.variableGlobals) - Number(window.localStorage.valListass);
+			} 
+			break;
+		case "meddeclarante":
+			if (valDeclarante != 0) {
+				variableGlobal= variableGlobal - valDeclarante
+				window.localStorage['variableGlobals'] = Number(window.localStorage.variableGlobals) - Number(window.localStorage.valDeclarantes);
+			} 
+			break;
+		case "medijudiciales":
+			if (valJudiciales != 0) {
+				variableGlobal= variableGlobal - valJudiciales;
+				window.localStorage['variableGlobals'] = Number(window.localStorage.variableGlobals) - Number(window.localStorage.valJudicialess);
+			} 
+			break;
+		}
+		//fin
+
+		$.getJSON(archivoValidacion, {
+			usuario : dato,
+			password : dato2,
+			tipopersona : "natural"
+		}).done(
+				function(respuestaServer) {
+
+					if (respuestaServer.validacion == "ok") {
+						
+						
+						switch (peso) {
+						case "medtipo":
+							
+								valTipo= respuestaServer.totalFila;
+								window.localStorage['valTipos'] = valTipo;
+							 
+							break;
+						case "mednacimiento":
+							
+								valNacimiento= respuestaServer.totalFila;
+							 	window.localStorage['valNacimientos'] = valNacimiento;
+							break;
+						case "mededad":
+							
+								valEdad= respuestaServer.totalFila;
+								window.localStorage['valEdads'] = valEdad;
+							break;
+						case "medcentral":
+							
+								valCentrales= respuestaServer.totalFila;
+								window.localStorage['valCentraless'] = valCentrales;
+							break;
+						case "medgarantia":
+							
+								valGarantia= respuestaServer.totalFila;
+							 	window.localStorage['valGarantias'] = valGarantia;
+							break;
+						case "medingresos":
+							
+								 valIngresos= respuestaServer.totalFila;
+								window.localStorage['valIngresoss'] = valIngresos;
+							break;
+						case "medlistasr":
+							
+								valListas= respuestaServer.totalFila;
+								window.localStorage['valListass'] = valListas;
+							break;
+						case "meddeclarante":
+							
+								valDeclarante= respuestaServer.totalFila;
+							 	window.localStorage['valDeclarantes'] = valDeclarante;
+							break;
+						case "medijudiciales":
+							
+								valJudiciales= respuestaServer.totalFila;
+								window.localStorage['valJudicialess'] = valJudiciales;
+							break;
+						}
+
+						variableGlobal = variableGlobal
+								+ respuestaServer.totalFila;
+						window.localStorage['variableGlobals'] = variableGlobal.toFixed(2);		
+						$("#scorer").html(
+								"<p class='t_name'>Total score</p><span class='dato'> "
+										+ variableGlobal.toFixed(2) + " </span>");
+
+					} else {
+
+						/// ejecutar una conducta cuando la validacion falla
+					}
+
+				})
+		return false;
+	}
+
+	function cuadro() {
+		variableGlobal=0;
+	
+	 valTipo = 0
+	 valNacimiento = 0
+	 valEdad = 0
+	 valCentrales = 0
+	 valGarantia = 0
+	 valIngresos = 0
+	 valListas = 0
+	 valDeclarante = 0
+	 valJudiciales = 0
+		window.localStorage.clear();
+		$("#scorer").html(
+								"<p class='t_name'>Total score</p><span class='dato'> "
+										+ variableGlobal.toFixed(2) + " </span>");
+	}
+	
+	
+</script>
+<script src="//code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function () {
+      /*
+       * check browser supports local storage
+       */
+      if (window.localStorage) {
+        /*
+         * if form field values exist in local storage use
+         * them to populate the form when the page loads
+         */
+		 
+		 if (window.localStorage.variableGlobals) {
+			 variableGlobal=Number(window.localStorage.variableGlobals);
+	 		
+         $("#scorer").html(
+								"<p class='t_name'>Total score</p><span class='dato'> "
+										+ window.localStorage.variableGlobals + " </span>");
+		 }
+        if (window.localStorage.medtipo) {
+			 valTipo = Number(window.localStorage.valTipos);
+          $("#medtipo").find("option[value=" + window.localStorage.medtipo + "]").attr("selected", true);
+		 
+		 }
+		 if (window.localStorage.mednacimiento) {
+			 valNacimiento =Number(window.localStorage.valNacimientos);
+          $("#mednacimiento").find("option[value=" + window.localStorage.mednacimiento + "]").attr("selected", true);
+		  
+        }
+		 if (window.localStorage.mededad) {
+          $("#mededad").find("option[value=" + window.localStorage.mededad + "]").attr("selected", true);
+		  valEdad = Number(window.localStorage.valEdads);
+        }
+		 if (window.localStorage.medcentral) {
+			  valCentrales = Number(window.localStorage.valCentraless);
+          $("#medcentral").find("option[value=" + window.localStorage.medcentral + "]").attr("selected", true);
+		 
+        }
+		 if (window.localStorage.medgarantia) {
+			 valGarantia = Number(window.localStorage.valGarantias);
+          $("#medgarantia").find("option[value=" + window.localStorage.medgarantia + "]").attr("selected", true);
+		  
+        }
+		 if (window.localStorage.medingresos) {
+			 valIngresos = Number(window.localStorage.valIngresoss);
+          $("#medingresos").find("option[value=" + window.localStorage.medingresos + "]").attr("selected", true);
+        }
+		 if (window.localStorage.medlistasr) {
+			 valListas = Number(window.localStorage.valListass);
+          $("#medlistasr").find("option[value=" + window.localStorage.medlistasr + "]").attr("selected", true);
+        }
+		 if (window.localStorage.meddeclarante) {
+			 valDeclarante = Number(window.localStorage.valDeclarantes);
+          $("#meddeclarante").find("option[value=" + window.localStorage.meddeclarante + "]").attr("selected", true);
+        }
+		 if (window.localStorage.medijudiciales) {			 
+			valJudiciales = Number(window.localStorage.valJudicialess);
+          $("#medijudiciales").find("option[value=" + window.localStorage.medijudiciales + "]").attr("selected", true);
+        }
+               
+        /*
+         * when a form field changes store it's value in local storage
+         */
+        $("input[type=text],select,textarea").change(function(){
+          $this = $(this);
+          window.localStorage[$this.attr("name")] = $this.val();
+        });
+       
+        
+        $("form")
+           /* 
+           * output local storage to the console each time the form changes
+           * (you may want to remove this code on the production server)
+           */
+          .change(function(){
+            console.log(window.localStorage);
+          });
+      }
+    });
+    </script>
+</head>
+<body id="int" class="natural">
+	<div class="div_contenedor">
+		<header>
+			<nav>
+				<div class="div_icono"></div>
+				<div class="div_botones">
+					<a class="btn-home" href="index.html"></a><a href="index.html"><img src="img/img-volver.png" width="30" height="34"></a>
+				</div>
+			</nav>
+			<h1>
+				Persona<br>Natural
+			</h1>
+			<h2>Calificación de crédito - score</h2>
+		</header>
+		<section>
+        <form name="form" id="form">
+			<!--TOGGLE-->
+			<!-- accordion -->
+			<div class="rt-toggle">
+				<ol>
+					<!-- 1st pane -->
+					<li>
+						<div class="toggle-head">
+							<div class="toggle-number">1</div>
+							<!-- number -->
+							<div class="toggle-title">Tipo de cliente</div>
+							<!-- pane title -->
+							<div class="icon"></div>
+						</div> <!-- pane content -->
+						<div class="toggle-content">
+                        
+							<div class="par div_con">
+								<select name="medtipo" id="medtipo" class="selopt"
+									onChange='valida(this.value,this.id)'>
+									<option>Selecccione</option>
+									<option value="medempleado">Empleado</option>
+									<option value="medindependiente">Independiente</option>
+									<option value="medpensionado">Pensionado</option>
+								</select>
+							</div>
+
+						</div>
+					</li>
+					<!-- / 1st pane -->
+
+					<!-- 2st pane -->
+					<li>
+						<div class="toggle-head">
+							<div class="toggle-number">2</div>
+							<!-- number -->
+							<div class="toggle-title">Nacimiento</div>
+							<div class="icon"></div>
+							<!-- pane title -->
+						</div> <!-- pane content -->
+						<div class="toggle-content">
+							<div class="par div_con">
+								<select name="mednacimiento" id="mednacimiento" class="selopt"
+									onChange='valida(this.value,this.id)'>
+									<option>Seleccione</option>
+									<option value="medbogota">Bogotá</option>
+									<option value="medmedellin">Medellin</option>
+									<option value="medcartagena">Cartagena</option>
+									<option value="medbarranquilla">Barranquilla</option>
+									<option value="medcali">Cali</option>
+									<option value="medmanizales">Manizales</option>
+									<option value="medotras">Otras ciudades</option>
+								</select>
+							</div>
+
+						</div>
+					</li>
+					<!-- / 2st pane -->
+
+					<!-- 3st pane -->
+					<li>
+						<div class="toggle-head">
+							<div class="toggle-number">3</div>
+							<!-- number -->
+							<div class="toggle-title">Edad</div>
+							<div class="icon"></div>
+							<!-- pane title -->
+						</div> <!-- pane content -->
+						<div class="toggle-content">
+							<div class="par div_con">
+								<select name="mededad" id="mededad" class="selopt"
+									onChange='valida(this.value,this.id)'>
+									<option>Seleccione</option>
+									<option value="medentre1825">Entre 18 y 25 años</option>
+									<option value="medentre2633">Entre 26 y 33 años</option>
+									<option value="medentre3443">Entre 34 y 43 años</option>
+									<option value="medmayor43">Mayor de 43 años</option>
+
+								</select>
+							</div>
+
+						</div>
+					</li>
+					<!-- / 3st pane -->
+
+					<!-- 4st pane -->
+					<li>
+						<div class="toggle-head">
+							<div class="toggle-number">4</div>
+							<!-- number -->
+							<div class="toggle-title">Centrales de Riesgo</div>
+							<div class="icon"></div>
+							<!-- pane title -->
+						</div> <!-- pane content -->
+						<div class="toggle-content">
+							<div class="par div_con">
+								<select name="medcentral" id="medcentral" class="selopt"
+									onChange='valida(this.value,this.id)'>
+									<option>Seleccione</option>
+									<option value="medaaa">AAA</option>
+									<option value="medaa">AA</option>
+									<option value="meda">A</option>
+									<option value="medbbb">BBB</option>
+									<option value="medbb">BB</option>
+									<option value="medb">B</option>
+									<option value="medccc">CCC</option>
+									<option value="medcc">CC</option>
+									<option value="medc">C</option>
+									<option value="medrd">RD</option>
+									<option value="medd">D</option>
+								</select>
+							</div>
+
+						</div>
+					</li>
+					<!-- / 4st pane -->
+					<!-- 4st pane -->
+					<li>
+						<div class="toggle-head">
+							<div class="toggle-number">5</div>
+							<!-- number -->
+							<div class="toggle-title">Garantia</div>
+							<div class="icon"></div>
+							<!-- pane title -->
+						</div> <!-- pane content -->
+						<div class="toggle-content">
+							<div class="par div_con">
+								<select name="medgarantia" id="medgarantia" class="selopt"
+									onChange='valida(this.value,this.id)'>
+									<option>Seleccione</option>
+									<option value="medfactura">Factura de venta</option>
+									<option value="medcodeudor">Codeudor</option>
+									<option value="medpagare">Pagare</option>
+									<option value="medpc">Pagare + Codeudor</option>
+									<option value="medpoliza">Poliza de cumplimiento</option>
+									<option value="medtitulo">Titulo valor negociable
+										/Fiducia</option>
+									<option value="medbienes">Bienes inmuebles</option>
+									<option value="medbienesm">Bienes muebles</option>
+
+								</select>
+							</div>
+
+						</div>
+					</li>
+					<!-- / 4st pane -->
+					<!-- 4st pane -->
+					<li>
+						<div class="toggle-head">
+							<div class="toggle-number">6</div>
+							<!-- number -->
+							<div class="toggle-title">Ingresos</div>
+							<div class="icon"></div>
+							<!-- pane title -->
+						</div> <!-- pane content -->
+						<div class="toggle-content">
+							<div class="par div_con">
+								<select name="medingresos" id="medingresos" class="selopt"
+									onChange='valida(this.value,this.id)'>
+									<option>Seleccione</option>
+									<option value="medsmmlv">SMMLV</option>
+									<option value="medentre12">Entre $1.000.000 y $
+										2.000.000</option>
+									<option value="medentre23">Entre $2.000.0001 y $
+										3.000.000</option>
+									<option value="medentre35">Entre $3.000.000 y $
+										5.000.000</option>
+									<option value="medmayor5">> a $5.000.000</option>
+
+								</select>
+							</div>
+
+						</div>
+					</li>
+					<!-- / 4st pane -->
+					<!-- 4st pane -->
+					<li>
+						<div class="toggle-head">
+							<div class="toggle-number">7</div>
+							<!-- number -->
+							<div class="toggle-title">Listas restrictivas</div>
+							<div class="icon"></div>
+							<!-- pane title -->
+						</div> <!-- pane content -->
+						<div class="toggle-content">
+							<div class="par div_con">
+								<select name="medlistasr" id="medlistasr" class="selopt"
+									onChange='valida(this.value,this.id)'>
+									<option>Seleccione</option>
+									<option value="medlsi">SI</option>
+									<option value="medlno">NO</option>
+								</select>
+							</div>
+
+						</div>
+					</li>
+					<!-- / 4st pane -->
+					<!-- 4st pane -->
+					<li>
+						<div class="toggle-head">
+							<div class="toggle-number">8</div>
+							<!-- number -->
+							<div class="toggle-title">Declarante</div>
+							<div class="icon"></div>
+							<!-- pane title -->
+						</div> <!-- pane content -->
+						<div class="toggle-content">
+							<div class="par div_con">
+								<select name="meddeclarante" id="meddeclarante" class="selopt"
+									onChange='valida(this.value,this.id)'>
+									<option>Seleccione</option>
+									<option value="meddsi">SI</option>
+									<option value="medno">NO</option>
+								</select>
+							</div>
+
+						</div>
+					</li>
+					<!-- / 4st pane -->
+					<!-- 4st pane -->
+					<li>
+						<div class="toggle-head">
+							<div class="toggle-number">9</div>
+							<!-- number -->
+							<div class="toggle-title">Incidencias Judiciales</div>
+							<div class="icon"></div>
+							<!-- pane title -->
+						</div> <!-- pane content -->
+						<div class="toggle-content">
+							<div class="par div_con">
+								<select name="medijudiciales" id="medijudiciales" class="selopt"
+									onChange='valida(this.value,this.id)'>
+									<option>Seleccione</option>
+									<option value="medijsi">SI</option>
+									<option value="medijno">NO</option>
+								</select>
+							</div>
+
+
+						</div>
+					</li>
+					<!-- / 4st pane -->
+
+
+					<!-- 5st pane -->
+					<li>
+						<div class="toggle-head">
+							<div class="toggle-number">5</div>
+							<!-- number -->
+							<div class="par" id="scorer">
+								<p class="t_name">Total score</p>
+								<span class="dato"> 0.00 </span>
+							</div>
+						</div>
+					</li>
+					<!-- / 5st pane -->
+
+
+				</ol>
+			</div>
+			<!-- / end div .rt-toggle -->
+			<div class="div_botones_resultados">
+				<div class="div_btn_left">
+					<a onclick="$('#form')[0].reset();cuadro()">Nuevo Calculo</a>
+				</div>
+				<div class="div_btn_right">
+					<a
+						onclick="$(location).attr('href','resultado.html?'+(1-(variableGlobal/10))*100);">Ver
+						resultados</a>
+				</div>
+			</div>
+			<!--END TOGGLE-->
+            </form>
+		</section>
+		<footer></footer>
+	</div>
+
+	<script
+		src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script>
+		window.jQuery
+				|| document
+						.write(
+								'<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')
+	</script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	<script>
+		(function(b, o, i, l, e, r) {
+							b.GoogleAnalyticsObject = l;
+							b[l] || (b[l] = function() {
+								(b[l].q = b[l].q || []).push(arguments)
+							});
+							b[l].l = +new Date;
+							e = o.createElement(i);
+							r = o.getElementsByTagName(i)[0];
+							e.src = '//www.google-analytics.com/analytics.js';
+							r.parentNode.insertBefore(e, r)
+						}(window, document, 'script', 'ga'));
+		ga('create', 'UA-XXXXX-X');
+		ga('send', 'pageview');
+	</script>
+</body>
+</html>

@@ -1,0 +1,1468 @@
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+@import url(http://fonts.googleapis.com/css?family=Electrolize);
+html,
+button,
+input,
+select,
+textarea {
+color: #222;
+width:100%;
+height:100%;
+}
+
+html {
+font-size: 1em;
+line-height: 1.4;
+}
+
+body#index{
+background:url(../img/back_movil.jpg) #000000 no-repeat top center fixed;
+background-size:cover;
+background-attachment:fixed;
+color:#FFFFFF;
+font-family:Electrolize , tahoma;
+width:100%;
+height:100%;
+}
+body#int{
+background:url(../img/back_movil.jpg) #000000 no-repeat top center fixed;
+background-size:cover;
+background-attachment:fixed;
+color:#FFFFFF;
+font-family:Electrolize , tahoma;
+width:100%;
+height:100%;
+}
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+background: #b3d4fc;
+text-shadow: none;
+}
+
+::selection {
+background: #b3d4fc;
+text-shadow: none;
+}
+
+a{
+-webkit-transition: all .25s linear;
+-moz-transition: all .25s linear;
+-ms-transition: all .25s linear;
+-o-transition: all .25s linear;
+transition: all .25s linear;
+}
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+display: block;
+height: 1px;
+border: 0;
+border-top: 1px solid #ccc;
+margin: 1em 0;
+padding: 0;
+}
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+
+audio,
+canvas,
+img,
+video {
+vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+border: 0;
+margin: 0;
+padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+resize: vertical;
+}
+
+/* ==========================================================================
+   Browse Happy prompt
+   ========================================================================== */
+
+.browsehappy {
+margin: 0.2em 0;
+background: #ccc;
+color: #000;
+padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+/*contenido*/
+    h1{
+    text-align:center;
+    font-size:20px;
+    line-height:100%;
+    margin:20px auto;
+    }
+     h2{
+    text-align:center;
+    font-size:10px;
+    margin:10px auto;
+    line-height:100%;
+    }
+
+    .rt-toggle{
+    margin-bottom: 20px;
+    }
+
+    .rt-toggle ol{
+    list-style:none;
+    list-style-position:outside;
+    margin: 0;
+    padding:5px;
+    border-top:1px solid #eee;
+    }
+
+    .juridica .rt-toggle ol li { 
+    display: block;
+    clear: both;
+    border:1px solid #eee;
+    margin:2px auto; 
+    position: relative;
+    background:#FFFFFF repeat-x;
+    background-size:24px auto;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    -webkit-box-shadow:inset 5pxpx 2px 2px 2px #000000;
+    box-shadow:inset 5pxpx 2px 2px 2px #000000;
+    } 
+
+    .natural .rt-toggle ol li { 
+    display: block;
+    clear: both;
+    border:1px solid #eee;
+    margin:2px auto; 
+    position: relative;
+    background:#FFFFFF repeat-x;
+    background-size:24px auto;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    -webkit-box-shadow:inset 5pxpx 2px 2px 2px #000000;
+    box-shadow:inset 5pxpx 2px 2px 2px #000000;
+    } 
+
+    .juridica .rt-toggle ol li.open .toggle-head{ 
+    background: #a9c454  url(../img/sprite_dos.png) right -138px red no-repeat; /* Old browsers */
+    background: -moz-linear-gradient(top,  #a9c454 0%, #6e8919 50%, #6e8919 51%, #a9c454 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a9c454), color-stop(50%,#6e8919), color-stop(51%,#6e8919), color-stop(100%,#a9c454)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #a9c454 0%,#6e8919 50%,#6e8919 51%,#a9c454 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #a9c454 0%,#6e8919 50%,#6e8919 51%,#a9c454 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #a9c454 0%,#6e8919 50%,#6e8919 51%,#a9c454 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #a9c454 0%,#6e8919 50%,#6e8919 51%,#a9c454 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9c454', endColorstr='#a9c454',GradientType=0 ); /* IE6-9 */
+    -webkit-box-shadow:inset 0px 0px 0px 2px #114E6B;
+    -moz-box-shadow:inset 0px 0px 0px 2px #114E6B;
+    box-shadow:inset 0px 0px 0px 2px #114E6B;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    cursor: default;
+    color: #FFFFFF;
+    position:relative;
+    }
+    .natural .rt-toggle ol li.open .toggle-head{ 
+    background: #008ebf; /* Old browsers */
+    background: -moz-linear-gradient(top,  #008ebf 0%, #114e6b 50%, #114e6b 51%, #008ebf 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#008ebf), color-stop(50%,#114e6b), color-stop(51%,#114e6b), color-stop(100%,#008ebf)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #008ebf 0%,#114e6b 50%,#114e6b 51%,#008ebf 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #008ebf 0%,#114e6b 50%,#114e6b 51%,#008ebf 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #008ebf 0%,#114e6b 50%,#114e6b 51%,#008ebf 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #008ebf 0%,#114e6b 50%,#114e6b 51%,#008ebf 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#008ebf', endColorstr='#008ebf',GradientType=0 ); /* IE6-9 */
+    -webkit-box-shadow:inset 0px 0px 0px 2px #587508;
+    -moz-box-shadow:inset 0px 0px 0px 2px #587508;
+    box-shadow:inset 0px 0px 0px 2px #587508;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    cursor: default;
+    color: #FFFFFF;
+    position:relative;
+    }
+
+    .juridica .rt-toggle ol li .toggle-head{ 
+    cursor: pointer;
+    background: #a9c454  url(../img/sprite_dos.png) right -138px red no-repeat; /* Old browsers */
+    background: -moz-linear-gradient(top,  #a9c454 0%, #6e8919 50%, #6e8919 51%, #a9c454 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a9c454), color-stop(50%,#6e8919), color-stop(51%,#6e8919), color-stop(100%,#a9c454)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #a9c454 0%,#6e8919 50%,#6e8919 51%,#a9c454 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #a9c454 0%,#6e8919 50%,#6e8919 51%,#a9c454 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #a9c454 0%,#6e8919 50%,#6e8919 51%,#a9c454 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #a9c454 0%,#6e8919 50%,#6e8919 51%,#a9c454 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9c454', endColorstr='#a9c454',GradientType=0 ); /* IE6-9 */
+    -webkit-box-shadow:inset 0px 0px 0px 2px #587508;
+    -moz-box-shadow:inset 0px 0px 0px 2px #587508;
+    box-shadow:inset 0px 0px 0px 2px #587508;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    padding:10px 0;
+    cursor:pointer;
+    position:relative;
+    }
+    .natural .rt-toggle ol li .toggle-head{ 
+        cursor: pointer;
+        background: #008ebf; /* Old browsers */
+        background: -moz-linear-gradient(top,  #008ebf 0%, #114e6b 50%, #114e6b 51%, #008ebf 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#008ebf), color-stop(50%,#114e6b), color-stop(51%,#114e6b), color-stop(100%,#008ebf)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #008ebf 0%,#114e6b 50%,#114e6b 51%,#008ebf 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #008ebf 0%,#114e6b 50%,#114e6b 51%,#008ebf 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #008ebf 0%,#114e6b 50%,#114e6b 51%,#008ebf 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  #008ebf 0%,#114e6b 50%,#114e6b 51%,#008ebf 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#008ebf', endColorstr='#008ebf',GradientType=0 ); /* IE6-9 */
+        -webkit-box-shadow:inset 0px 0px 0px 2px #114E6B;
+        -moz-box-shadow:inset 0px 0px 0px 2px #114E6B;
+        box-shadow:inset 0px 0px 0px 2px #114E6B;
+        -webkit-border-radius: 5px 5px 5px 5px;
+        border-radius: 5px 5px 5px 5px;
+        padding:10px 0;
+        cursor:pointer;
+        position:relative;
+    }
+    
+    .juridica .rt-toggle ol li:last-child .toggle-head{ 
+        cursor: pointer;
+        background: #FFFFFF;
+        -webkit-box-shadow:inset 0px 0px 0px 2px #333333;
+        -moz-box-shadow:inset 0px 0px 0px 2px #333333;
+        box-shadow:inset 0px 0px 0px 2px #333333;
+        -webkit-border-radius: 5px 5px 5px 5px;
+        border-radius: 5px 5px 5px 5px;
+        padding:10px 0;
+        position:relative;
+    }
+    .natural .rt-toggle ol li:last-child .toggle-head{ 
+        cursor: pointer;
+        background: #FFFFFF;
+        -webkit-box-shadow:inset 0px 0px 0px 2px #333333;
+        -moz-box-shadow:inset 0px 0px 0px 2px #333333;
+        box-shadow:inset 0px 0px 0px 2px #333333;
+        -webkit-border-radius: 5px 5px 5px 5px;
+        border-radius: 5px 5px 5px 5px;
+        padding:10px 0;
+        position:relative;
+    }
+    
+    .rt-toggle ol li:last-child .toggle-head .icon{
+        display:none;
+    }
+    
+    .rt-toggle ol li:last-child { 
+        display: block;
+        clear: both;
+        border:1px solid #eee;
+        margin:2px auto; 
+        position: relative;
+        background:#FFFFFF repeat-x;
+        background-size:24px auto;
+        -webkit-border-radius: 5px 5px 5px 5px;
+        border-radius: 5px 5px 5px 5px;
+       -webkit-box-shadow:inset 5px 2px 2px 2px #000000;
+        box-shadow:inset 5px 2px 2px 2px #000000;
+        color:#000000;
+    } 
+    .rt-toggle ol li .toggle-head .t_name{
+        width:61%;
+        display:inline-block;
+        color:#464646;
+        text-align:left;
+        padding:0 0 0 15px;
+        margin:5px;
+        font-size:0.9em;
+        font-family:arial;
+    }
+    
+    .rt-toggle ol li .toggle-head .dato{
+        width:20%;
+        display:inline-block;
+        color:#464646;
+        text-align:center;
+        padding:0;
+        margin:5px;
+        font-size:0.9em;
+        font-family:arial;
+        border-left: 1px solid #333;
+        padding:0;
+    }
+    .selopt{
+        margin:5px;
+        height:20px !important;
+        width:98%;
+        font-size:0.9em;
+        font-family:arial;
+        /*-webkit-appearance: push-button;
+        -moz-appearance:    push-button;
+        appearance:         push-button;*/
+        border:solid 1px #f5f5f5;
+        color:#464646 !important;
+        background:#FFFFFF;
+        padding:0 0 0 10px;
+        -webkit-border-radius: 0px;
+        border-radius: 0px;
+    } 
+    
+    .par{
+        background:#FFFFFF;
+        width:95%;
+        height:auto;
+        min-height:5px;
+        margin:0 auto;
+        padding:0;
+    }
+    .impar{
+        background:#f5f5f5;
+        width:95%;
+        height:auto;
+        min-height:5px;
+        margin:0 auto;
+        padding:0;
+    }
+    .t_name{
+        width:65%;
+        display:inline-block;
+        color:#464646;
+        text-align:left;
+        padding:0 0 0 5px;
+        margin:5px;
+        font-size:0.9em;
+        font-family:arial;
+    }
+    
+    .dato{
+        width:20%;
+        display:inline-block;
+        color:#464646;
+        text-align:center;
+        padding:0;
+        margin:5px;
+        font-size:0.9em;
+        font-family:arial;
+        border-left: 1px solid #333;
+        padding:0;
+    }
+    .selopt{
+        margin:5px 0 0 0;
+        height:30px !important;
+        width:100%;
+        font-size:0.9em;
+        font-family:arial;
+        -webkit-appearance: push-button;
+        -moz-appearance:    push-button;
+        appearance:         push-button;
+        border-left:solid 1px #5a5a5a;
+        border-top:solid 1px #5a5a5a;
+        border-bottom:solid 1px #5a5a5a;
+        color:#464646 !important;
+        background:#FFFFFF url(../img/arrow_select.png) right no-repeat;
+        background-size:auto 30px;
+        padding:5px 0 5px 10px;
+        -webkit-border-radius: 0px;
+        border-radius: 0px;
+        cursor:pointer;
+    }
+    
+    .rt-toggle ol li:last-child .toggle-number{
+        display:none;
+    }
+    
+    .rt-toggle ol li:last-child .toggle-title{
+        margin:0 0 0 10px;
+    }
+    
+    .rt-toggle ol li .toggle-head .icon{
+        width:40px;
+        height:40px;
+        position:absolute;
+        right:0.1em;
+        top:0.1em;
+        background: url(../img/sprite_dos.png) right -100px no-repeat;
+    }
+    
+    .rt-toggle ol li.open .toggle-head .icon{
+        width:40px;
+        height:40px;
+        position:absolute;
+        right:0.1em;
+        top:0.1em;
+        background: url(../img/sprite_dos.png) right -139px no-repeat;
+    }
+    
+    .rt-toggle ol li .toggle-number{ 
+        width:17px;
+        height:21px;
+        font-size:18px;
+        padding: 3px 0 0 6px;
+        line-height:100%;
+        border-radius:100px; 
+        background: none; 
+        color:#fff;    
+        display: inline-block;
+        position: absolute;
+        top:10px;
+        left:5px;
+    } 
+    
+    
+
+    .rt-toggle ol li .toggle-title{ 
+        display: inline-block;
+        font-size:14px; 
+        margin: 0 30px;
+    }   
+
+    .rt-toggle.no-numbers ol li .toggle-title {
+        margin: 0 30px 0 0;
+    }
+
+    .rt-toggle ol li .toggle-content{ 
+        clear: both;
+        display: none;  
+        border-top:1px solid #eee;
+        margin: 0 0 0;
+        padding: 0 0 10px;      
+    }   
+
+    .rt-toggle ol li.open .toggle-content{}
+    
+    /* left aligned small accordion */ 
+    .rt-toggle.small._left{
+        width:220px !important;
+        float:left !important;
+        margin:0 20px 20px 0 !important;
+    }
+    
+    /* right aligned small accordion */ 
+    .rt-toggle.small._right{
+        width:220px !important;
+        float:right !important;
+        margin:0 0 20px 20px !important;
+    }
+
+    /*tab paddings */
+    .pane .boxes .box{padding:0;} /* tabs used in a box */
+    .shortcode_tabs .taps_wrap .pane{padding:20px 0;} /* tabs created with shortcode */
+    
+    .natural .div_icono{
+        width:50px;
+        height:50px;
+        position:absolute;
+        left:0.5em;
+        top:0.5em;
+        background:url(../img/persona_natural.png);
+        background-size:100% auto;
+    }
+    .juridica .div_icono{
+        width:50px;
+        height:50px;
+        position:absolute;
+        left:0.5em;
+        top:0.5em;
+        background:url(../img/persona_juridica.png);
+        background-size:100% auto;
+    }
+    
+    .div_botones{
+        width:30px;
+        height:auto;
+        position:absolute;
+        right:0.5em;
+        top:0.5em;
+        background-size:100% auto;
+        text-align:center;
+    }
+     .btn-home{
+         background:url(../img/sprite_dos.png) no-repeat;
+         background-size:30px;
+         cursor:pointer;
+         display:block;
+        width:30px;
+        height:30px;
+        margin:5px 0 0 0;
+     }
+      .btn_opciones div{
+        background:url(../img/sprite_dos.png) left -35px no-repeat;
+        background-size:30px;
+        cursor:pointer;
+        display:block;
+        width:30px;
+        height:30px;
+        margin:5px 0 0 0;
+     }
+     .btn_opciones{
+         position:relative;
+     }
+     .btn_opciones:hover .menu{
+         visibility:visible;
+     }
+     .menu{
+         position:absolute;
+         margin:-30px 0 0 0;
+         padding:0;
+         right:0;
+         z-index:9999;
+         visibility:hidden;
+     }
+     .menu li{
+         background:#000000 !important;
+         border-bottom:solid #333333 thin;
+         height:auto !important;
+         width:auto;
+         text-align:left;
+         padding:0 0.3em;
+     }
+      .menu li a{
+         background:#000000 !important;
+         font-size:0.6em;
+         cursor:pointer;
+         font-family:arial;
+         width:100px;
+         display:block;
+     }
+     .menu li a:hover{
+         color:#CCCCCC;
+     }
+      
+     .analisis{
+        width:100%;
+        height:auto;
+        min-height:500px;
+    }
+    h3{
+        background:black;
+        border:2px solid white;
+        text-align:center;
+        font-size:0.8em;
+        width:70%;
+        margin:0 auto 0.2em;
+        -webkit-border-radius: 10px 10px 10px 10px;
+        border-radius: 10px 10px 10px 10px;
+    }
+    .tacometro_01{
+        width:200px;
+        height:200px;
+        margin:0.2em auto;
+        background:url(../img/tacometro_01.png) no-repeat;
+        background-size:100% auto;
+        position:relative;
+    }
+        .tacometro_01 .aguja_01{
+          width:20px;
+          height:50px;
+          background:url(../img/aguja_tacometro_01.png) no-repeat;
+          background-size:100% auto;
+          float:left;
+          margin:29% 0 0 45%
+        }
+    .tacometro_02{
+        width:200px;
+        height:200px;
+        margin:1em auto;
+        background:url(../img/tacometro_02.png) no-repeat;
+        background-size:100% auto;
+        position:relative;
+    }
+        .tacometro_02 .aguja_02{
+          width:6px;
+          height:50px;
+          background:url(../img/aguja_tacometro_02.png) no-repeat;
+          background-size:100% auto;
+          float:left;
+          margin:29% 0 0 49%
+        }
+        .semasforo{
+          width:105px;
+          height:35px;
+          position:absolute;
+          bottom:23%;
+          left:50%;
+          margin:0 0 0 -52px;
+        }
+        .semasforo .verde{
+            width:35px;
+            height:35px;
+            background:url(../img/sprite_semasforo.png) no-repeat -80px top;
+            background-size:330% auto;
+            float:left;
+        }
+        .semasforo .verde_off{
+            width:35px;
+            height:35px;
+            background:url(../img/sprite_semasforo.png) no-repeat -80px -38px;
+            background-size:330% auto;
+            float:left;
+        }
+        .semasforo .amarillo{
+            width:35px;
+            height:35px;
+            background:url(../img/sprite_semasforo.png) no-repeat -40px top;
+            background-size:330% auto;
+             float:left;
+        }
+        .semasforo .amarillo_off{
+            width:35px;
+            height:35px;
+            background:url(../img/sprite_semasforo.png) no-repeat -40px -38px;
+            background-size:330% auto;
+             float:left;
+        }
+        .semasforo .rojo{
+            width:35px;
+            height:35px;
+            background:url(../img/sprite_semasforo.png) no-repeat 0px top;
+            background-size:330% auto;
+            float:left;
+        }
+        .semasforo .rojo_off{
+            width:35px;
+            height:35px;
+            background:url(../img/sprite_semasforo.png) no-repeat 0px -38px;
+            background-size:330% auto;
+            float:left;
+        }
+        .tacometro_03{
+            width:200px;
+            height:auto;
+            margin:1em auto;
+            background-size:100% auto;
+            border:1px solid white;
+            -webkit-border-radius: 10px 10px 10px 10px;
+            border-radius: 10px 10px 10px 10px;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-box-shadow: 0px 0px 4px 0px #ffffff; /* Android 2.3+, iOS 4.0.2-4.2, Safari 3-4 */
+             box-shadow: 0px 0px 4px 0px #ffffff; /* Chrome 6+, Firefox 4+, IE 9+, iOS 5+, Opera 10.50+ */
+        }
+         .tacometro_03 h4{
+            font-size:3em;
+            text-align:center;
+            font-style:italic;
+            margin:0;
+         }
+         .div_botones_resultados{
+             width:95%;
+             height:auto;
+             margin:0 auto;
+             text-align:center;
+         }
+         .div_btn_left, .div_btn_right{
+            display:inline-block;
+            width:49%;
+            text-align:center;
+         }
+         .div_btn_left a, .div_btn_right a{
+            display:block;
+            padding:10px;
+            cursor:pointer;
+            background: #45484d; /* Old browsers */
+            /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+            background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQ1NDg0ZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+            background: -moz-linear-gradient(top,  #45484d 0%, #000000 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top,  #45484d 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top,  #45484d 0%,#000000 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top,  #45484d 0%,#000000 100%); /* IE10+ */
+            background: linear-gradient(to bottom,  #45484d 0%,#000000 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-8 */
+            -webkit-box-shadow:inset 0px 0px 0px 1px #FFFFFF;
+            -moz-box-shadow:inset 0px 0px 0px 1px #FFFFFF;
+            box-shadow:inset 0px 0px 0px 1px #FFFFFF;  
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+          }
+         .div_btn_left a:hover, .div_btn_right a:hover{
+            background: #ffffff; /* Old browsers */
+            /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+            background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNWU1ZTUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+            background: -moz-linear-gradient(top,  #ffffff 0%, #e5e5e5 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* IE10+ */
+            background: linear-gradient(to bottom,  #ffffff 0%,#e5e5e5 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-8 */
+            color:#000000;   
+           }
+           .ul_menu_redondo{
+        width:100%;
+        margin:0;
+        padding:0;
+        text-align:center;
+        position:fixed;
+        bottom:0;
+    }
+    .ul_menu_redondo li{
+        display:inline-block;
+        width:48%;
+        height:140px;
+        text-align:center;
+    }
+    .ul_menu_redondo li a:hover{
+        -webkit-box-shadow: 0 0 10px 5px #FFFFFF;
+        box-shadow: 0 0 10px 5px #FFFFFF;
+        border: 1px solid #FFFFFF;
+    }
+    .btn_natural_redondo{
+        display:inline-block;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        background:url(../img/persona_natural.png) no-repeat center center;
+        background-size:50% auto;
+        color:#FFFFFF;
+        text-decoration:none;
+        line-height:100%;
+        width:120px;
+        height:120px;
+        font-size:11px;
+        -webkit-border-radius: 100px 100px 100px 100px;
+        border-radius: 100px 100px 100px 100px;
+        border: 1px solid #333333;
+        padding:10px;
+      }
+      .btn_juridica_redondo{
+        display:inline-block;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        background:url(../img/persona_juridica.png) no-repeat center center;
+        background-size:50% auto;
+        color:#FFFFFF;
+        text-decoration:none;
+        line-height:100%;
+        width:120px;
+        height:120px;
+        font-size:11px;
+        -webkit-border-radius: 100px 100px 100px 100px;
+        border-radius: 100px 100px 100px 100px;
+        border: 1px solid #333333;
+        padding:10px;
+      }
+/*IPHONE 5*/
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px){
+    .div_contenedor{
+    width:100%;
+    height:100%;
+    }
+    .div_logo{
+        background:url(../img/logo_movil_min.png) no-repeat center;
+        background-size:95% auto;
+        width:100%;
+        height:100%;
+        min-height:540px;
+    }
+    .ul_menu{
+        margin:0 3px;
+        padding:0;
+        position:fixed;
+        bottom:0;
+        width:100%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .ul_menu li{
+        float:left;
+        background:url(../img/back_azul.png);
+        margin:0.2em 0.2em 0 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        cursor: pointer;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+    .ul_menu li a:hover{
+         -webkit-box-shadow: 0px 0px 9px 0px #68ffff; /* Android 2.3+, iOS 4.0.2-4.2, Safari 3-4 */
+              box-shadow: 0px 0px 9px 0px #68ffff; /* Chrome 6+, Firefox 4+, IE 9+, iOS 5+, Opera 10.50+ */
+          color:#000000 !important;
+              
+    }
+    .ul_menu li a{
+        display:block;
+        width:60px;
+        height:40px;
+        font-size:12px;
+        text-align:center;
+        line-height:12px;
+        padding:50px 0 0 0;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        color:#FFFFFF;
+        text-decoration:none;
+    }
+    .ul_menu li a:link,.ul_menu li a:visited,.ul_menu li a:active{
+        color:#FFFFFF;
+        text-decoration:none;
+    }
+    .btn_natural{
+        background:url(../img/persona_natural.png) no-repeat center 5px;
+        background-size:80% auto;
+    }
+    .btn_natural:hover{
+        background:#68ffff url(../img/persona_natural.png) no-repeat center 5px;
+        background-size:80% auto;
+        color:#000000;
+    }
+    .btn_juridica{
+        background:url(../img/persona_juridica.png) no-repeat center 5px;
+        background-size:80% auto;
+    }
+    .btn_juridica:hover{
+        background:#68ffff url(../img/persona_juridica.png) no-repeat center 5px;
+        background-size:80% auto;
+        color:#000000;
+    }
+    .btn_scoring{
+        background:url(../img/scoring.png) no-repeat center 3px;
+        background-size:50% auto;
+    }
+    .btn_scoring:hover{
+        background:#68ffff url(../img/scoring.png) no-repeat center 5px;
+        background-size:60% auto;
+        color:#000000;
+    }
+    
+/* Styles */
+}
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+    .div_logo{
+        background:url(../img/logo_movil.png) no-repeat center;
+        background-size:40% auto;
+        min-height:200px;
+    }
+    .ul_menu li a{
+        display:block;
+        width:110px;
+        height:20px;
+    }
+    .btn_natural{
+        background:url(../img/persona_natural.png) no-repeat center 2px;
+        background-size:50% auto;
+    }
+    .btn_natural:hover{
+        background:#68ffff url(../img/persona_natural.png) no-repeat center 2px;
+        background-size:50% auto;
+        color:#000000;
+    }
+    .btn_juridica{
+        background:url(../img/persona_juridica.png) no-repeat center 2px;
+        background-size:50% auto;
+    }
+    .btn_juridica:hover{
+        background:#68ffff url(../img/persona_juridica.png) no-repeat center 2px;
+        background-size:50% auto;
+        color:#000000;
+    }
+/* Styles */
+}
+/*END IPHONE 5*/
+/*IPAD*/
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-width : 768px){
+    .div_contenedor{
+    width:100%;
+    height:100%;
+    }
+    .div_logo{
+        background:url(../img/logo_movil.png) no-repeat center 150px;
+        background-size:95% auto;
+        width:100%;
+        height:100%;
+        min-height:620px;
+    }
+    .ul_menu{
+        margin:0 3px;
+        padding:0;
+        position:fixed;
+        bottom:0;
+        width:100%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .ul_menu li{
+        float:left;
+        background:url(../img/back_azul.png);
+        margin:0.2em 0.2em 0 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        cursor: pointer;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+    .ul_menu li a:hover{
+         -webkit-box-shadow: 0px 0px 9px 0px #68ffff; /* Android 2.3+, iOS 4.0.2-4.2, Safari 3-4 */
+              box-shadow: 0px 0px 9px 0px #68ffff; /* Chrome 6+, Firefox 4+, IE 9+, iOS 5+, Opera 10.50+ */
+          color:#000000 !important;
+              
+    }
+    .ul_menu li a{
+        display:block;
+        width:150px;
+        height:40px;
+        font-size:14px;
+        text-align:center;
+        line-height:12px;
+        padding:80px 0 0 0;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        color:#FFFFFF;
+        text-decoration:none;
+    }
+    .ul_menu li a:link,.ul_menu li a:visited,.ul_menu li a:active{
+        color:#FFFFFF;
+        text-decoration:none;
+    }
+    
+    .btn_natural{
+        background:url(../img/persona_natural.png) no-repeat center 5px;
+        background-size:50% auto;
+    }
+    .btn_natural:hover{
+        background:#68ffff url(../img/persona_natural.png) no-repeat center 5px;
+        background-size:50% auto;
+        color:#000000;
+    }
+    .btn_juridica{
+        background:url(../img/persona_juridica.png) no-repeat center 5px;
+        background-size:50% auto;
+    }
+    .btn_juridica:hover{
+        background:#68ffff url(../img/persona_juridica.png) no-repeat center 5px;
+        background-size:50% auto;
+        color:#000000;
+    }
+    .ul_menu_redondo{
+        width:100%;
+        margin:0;
+        padding:0;
+        text-align:center;
+        position:fixed;
+        bottom:0;
+    }
+    .ul_menu_redondo li{
+        display:inline-block;
+        width:36%;
+        height:380px;
+        text-align:center;
+    }
+    .ul_menu_redondo li a:hover{
+        -webkit-box-shadow: 0 0 10px 5px #FFFFFF;
+        box-shadow: 0 0 10px 5px #FFFFFF;
+        border: 1px solid #FFFFFF;
+    }
+    .btn_natural_redondo{
+        display:inline-block;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        background:url(../img/persona_natural.png) no-repeat center center;
+        background-size:50% auto;
+        color:#FFFFFF;
+        text-decoration:none;
+        line-height:100%;
+        width:160px;
+        height:160px;
+        font-size:16px;
+        -webkit-border-radius: 100px 100px 100px 100px;
+        border-radius: 100px 100px 100px 100px;
+        border: 1px solid #333333;
+        padding:10px;
+      }
+      .btn_juridica_redondo{
+        display:inline-block;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        background:url(../img/persona_juridica.png) no-repeat center center;
+        background-size:50% auto;
+        color:#FFFFFF;
+        text-decoration:none;
+        line-height:100%;
+        width:160px;
+        height:160px;
+        font-size:16px;
+        -webkit-border-radius: 100px 100px 100px 100px;
+        border-radius: 100px 100px 100px 100px;
+        border: 1px solid #333333;
+        padding:10px;
+      }
+    
+/* Styles */
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-width : 1024px){
+    .div_contenedor{
+    width:100%;
+    height:100%;
+    }
+    .div_logo{
+        background:url(../img/logo_movil.png) no-repeat center 60px;
+        background-size:60% auto;
+        width:100%;
+        height:100%;
+        min-height:620px;
+    }
+    .ul_menu{
+        margin:0 3px;
+        padding:0;
+        position:fixed;
+        bottom:0;
+        width:100%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .ul_menu li{
+        float:left;
+        background:url(../img/back_azul.png);
+        margin:0.2em 0.2em 0 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        cursor: pointer;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+    .ul_menu li a:hover{
+         -webkit-box-shadow: 0px 0px 9px 0px #68ffff; /* Android 2.3+, iOS 4.0.2-4.2, Safari 3-4 */
+              box-shadow: 0px 0px 9px 0px #68ffff; /* Chrome 6+, Firefox 4+, IE 9+, iOS 5+, Opera 10.50+ */
+          color:#000000 !important;
+              
+    }
+    .ul_menu li a{
+        display:block;
+        width:201px;
+        height:40px;
+        font-size:16px;
+        text-align:center;
+        line-height:12px;
+        padding:100px 0 0 0;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        color:#FFFFFF;
+        text-decoration:none;
+    }
+    .ul_menu li a:link,.ul_menu li a:visited,.ul_menu li a:active{
+        color:#FFFFFF;
+        text-decoration:none;
+    }
+    .btn_natural{
+        background:url(../img/persona_natural.png) no-repeat center 5px;
+        background-size:50% auto;
+    }
+    .btn_natural:hover{
+        background:#68ffff url(../img/persona_natural.png) no-repeat center 5px;
+        background-size:50% auto;
+        color:#000000;
+    }
+    .btn_juridica{
+        background:url(../img/persona_juridica.png) no-repeat center 5px;
+        background-size:50% auto;
+    }
+    .btn_juridica:hover{
+        background:#68ffff url(../img/persona_juridica.png) no-repeat center 5px;
+        background-size:50% auto;
+        color:#000000;
+    }
+    
+/* Styles */
+}
+/*END IPAD*/
+/*KINDLE*/
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-width : 600px){
+    .div_contenedor{
+    width:100%;
+    height:100%;
+    }
+    .div_logo{
+        background:url(../img/logo_movil.png) no-repeat center 100px;
+        background-size:95% auto;
+        width:100%;
+        height:100%;
+        min-height:620px;
+    }
+    .ul_menu{
+        margin:0 3px;
+        padding:0;
+        position:fixed;
+        bottom:0;
+        width:100%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .ul_menu li{
+        float:left;
+        background:url(../img/back_azul.png);
+        margin:0.2em 0.2em 0 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        cursor: pointer;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+    .ul_menu li a:hover{
+        -webkit-box-shadow: 0px 0px 9px 0px #68ffff; /* Android 2.3+, iOS 4.0.2-4.2, Safari 3-4 */
+        box-shadow: 0px 0px 9px 0px #68ffff; /* Chrome 6+, Firefox 4+, IE 9+, iOS 5+, Opera 10.50+ */
+        color:#000000 !important;         
+    }
+    .ul_menu li a{
+        display:block;
+        width:116px;
+        height:40px;
+        font-size:14px;
+        text-align:center;
+        line-height:12px;
+        padding:60px 0 0 0;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        color:#FFFFFF;
+        text-decoration:none;
+    }
+    .ul_menu li a:link,.ul_menu li a:visited,.ul_menu li a:active{
+        color:#FFFFFF;
+        text-decoration:none;
+    }
+    .btn_natural{
+        background:url(../img/persona_natural.png) no-repeat center 5px;
+        background-size:50% auto;
+    }
+    .btn_natural:hover{
+        background:#68ffff url(../img/persona_natural.png) no-repeat center 5px;
+        background-size:50% auto;
+        color:#000000;
+    }
+    .btn_juridica{
+        background:url(../img/persona_juridica.png) no-repeat center 5px;
+        background-size:50% auto;
+    }
+    .btn_juridica:hover{
+        background:#68ffff url(../img/persona_juridica.png) no-repeat center 5px;
+        background-size:50% auto;
+        color:#000000;
+    }
+    
+/* Styles */
+}
+/*END KINDLE*/
+/*IPAD SEGUNDA GENERACION*/
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-width : 768px){
+    .div_contenedor{
+        width:100%;
+        height:100%;
+    }
+    .div_logo{
+        background:url(../img/logo_movil.png) no-repeat center 190px;
+        background-size:80% auto;
+        width:100%;
+        height:100%;
+        min-height:620px;
+    }
+    .ul_menu{
+        margin:0 3px;
+        padding:0;
+        position:fixed;
+        bottom:0;
+        width:100%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .ul_menu li{
+        float:left;
+        background:url(../img/back_azul.png);
+        margin:0.2em 0.2em 0 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        cursor: pointer;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+    .ul_menu li a:hover{
+         -webkit-box-shadow: 0px 0px 9px 0px #68ffff; /* Android 2.3+, iOS 4.0.2-4.2, Safari 3-4 */
+         box-shadow: 0px 0px 9px 0px #68ffff; /* Chrome 6+, Firefox 4+, IE 9+, iOS 5+, Opera 10.50+ */
+         color:#000000 !important;         
+    }
+    .ul_menu li a{
+        display:block;
+        width:150px;
+        height:40px;
+        font-size:16px;
+        text-align:center;
+        line-height:12px;
+        padding:80px 0 0 0;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        color:#FFFFFF;
+        text-decoration:none;
+    }
+    .ul_menu li a:link,.ul_menu li a:visited,.ul_menu li a:active{
+        color:#FFFFFF;
+        text-decoration:none;
+    }
+    .btn_natural{
+        background:url(../img/persona_natural.png) no-repeat center 5px;
+        background-size:50% auto;
+    }
+    .btn_natural:hover{
+        background:#68ffff url(../img/persona_natural.png) no-repeat center 5px;
+        background-size:50% auto;
+        color:#000000;
+    }
+    .btn_juridica{
+        background:url(../img/persona_juridica.png) no-repeat center 5px;
+        background-size:50% auto;
+    }
+    .btn_juridica:hover{
+        background:#68ffff url(../img/persona_juridica.png) no-repeat center 5px;
+        background-size:50% auto;
+        color:#000000;
+    }
+     .div_btn_volver{        width:30px;        height:30px;        position:absolute;        left:0.8em;        top:3em}    .div_btn_volver a{        display:block;        width:30px;        height:30px;        background:url(../img/sprite_dos.png) 0 -125px no-repeat;         background-size:30px;         cursor:pointer}    
+/* Styles */
+}
+/*END IPAD SEGUNDA GENERACION*/
+
+
+/*end contenido*/
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Proyekta Analyzer</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+<link rel="stylesheet" href="css/stylesheets/style.css">
+<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script
+	src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+
+<!-- Favicons -->
+<link rel="icon" href="img/favicon.png">
+<link rel="appl∫e-touch-icon" href="img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72"
+	href="img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114"
+	href="img/apple-touch-icon-114x114.png">
+</head>
+<script>
+	if (localStorage.getItem("usuariolog") != null) {
+		// alert(localStorage.getItem("usuariolog"))
+		//localStorage.clear();
+		window.location.href = "menu.html";
+	}
+</script>
+<body class="no-scroll">
+	<!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+	<!--menu-->
+	
+	<!--end menu-->
+	<!-- Add your site or application content here -->
+	<div id="container">
+		<div id="topbar" class="slide invisible">
+			<a id="menu-button">Menu</a> <a id="" class="img-usser" href="">
+				<img src="img/img-usser.png" alt="">
+			</a> <a id="btn_despliegue_usser" class="btn_despliegue_usser"></a> <span
+				class="divisor"></span> <a id="btn_search"
+				class="btn_despliegue_search"></a>
+			<p class="txt_busqueda">
+				Buscar por<br>empresas
+			</p>
+		</div>
+		<div id="wrapper" class="slide">
+		  <div class="div_logo">
+			  <a class="logo"></a>
+  <div class="div_contenido">
+					<form action="menu.html" method="post" id="formulario">
+						<ul>
+							<li><label for="" class="formulario">Usuario</label> <input
+								type="text" class="usuario" id="nombredeusuario"
+								name="nombredeusuario"></li>
+							<li><label for="" class="formulario">Clave</label> <input
+								type="password" class="password" id="clave" name="clave">
+							</li>
+							<li><input type="submit" id="botonLogin"></li>
+							<li><a
+								href="http://proyekta.com.co/proyectaweb/recover/index.php"
+								class="btn_pass" taget="blank">Perdio su password?</a></li>
+						</ul>
+					</form>
+				</div>
+			</div>
+			<div class="list_carousel responsive">
+				<ul id="foo4">
+					<li><img src="img/img_02.jpg" alt=""></li>
+					<li><img src="img/img_01.jpg" alt=""></li>
+					<li><img src="img/img_02.jpg" alt=""></li>
+				</ul>
+				<div class="clearfix"></div>
+			</div>
+			<!--opciones slider-->
+			<div class="div_opciones_slider">
+				<a id="prev2" class="prev" href="#">&lt;</a>
+				<div id="pager2" class="pager"></div>
+				<a id="next2" class="next" href="#">&gt;</a>
+			</div>
+			<!--end opciones slider-->
+		</div>
+	</div>
+	</div>
+	<script>
+		window.jQuery
+				|| document
+						.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')
+	</script>
+	<script type="text/javascript" language="javascript"
+		src="js/jquery.carouFredSel-6.2.1-packed.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			//      Responsive layout, resizing the items
+			$('#foo4').carouFredSel({
+				responsive : true,
+				width : '100%',
+				prev : '#prev2',
+				next : '#next2',
+				pagination : "#pager2",
+				items : {
+					visible : {
+						min : 1,
+						max : 1
+					}
+				}
+			});
+
+			var opcionesSlider = $(".div_opciones_slider");
+			var menuPrincipal = $("#menu");
+			var objscene = $(window).height();
+			$(opcionesSlider).css("top", objscene - 44 + "px");
+			$(menuPrincipal).css("height", objscene + "px");
+		});
+	</script>
+	<script>
+		$('#formulario')
+				.submit(
+						function() {
+
+							// recolecta los valores que inserto el usuario
+							var datosUsuario = $("#nombredeusuario").val()
+							var datosPassword = $("#clave").val()
+
+							archivoValidacion = "http://proyekta.com.co/proyektaapp/server/login.php?jsoncallback=?"
+
+							$
+									.getJSON(archivoValidacion, {
+										usuario : datosUsuario,
+										password : datosPassword
+									})
+									.done(
+											function(respuestaServer) {
+
+												if (respuestaServer.validacion == "ok") {
+
+													/// si la validacion es correcta, muestra la pantalla "home"
+													///$.mobile.changePage("menu.html")
+													localStorage.clear();
+													localStorage.setItem(
+															"usuariolog",
+															respuestaServer.id);
+													localStorage
+															.setItem(
+																	"usernombre",
+																	respuestaServer.nombre);
+													window.location.href = "menu.html";
+
+												} else {
+
+													/// ejecutar una conducta cuando la validacion falla
+													alert(respuestaServer.mensaje)
+												}
+
+											})
+							return false;
+						})
+	</script>
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	<!--script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script-->
+</body>
+</html>

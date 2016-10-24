@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+<script type="text/javascript" language="javascript" src="cordova.js"></script>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>PROYECTA</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+<link rel="stylesheet" href="css/stylesheets/style.css">
+
+
+<!-- Favicons -->
+<link rel="icon" href="img/favicon.png">
+<link rel="appl∫e-touch-icon" href="img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72"
+	href="img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114"
+	href="img/apple-touch-icon-114x114.png">
+</head>
+<script>
+	if (localStorage.getItem("usuariolog") != null) {
+		// alert(localStorage.getItem("usuariolog"))
+		//localStorage.clear();
+		window.location.href = "menu.html";
+	}
+</script>
+<body class="no-scroll" style="background-image:url(img/img_01.jpg);">
+	<!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+	<!--menu-->
+	
+	<!--end menu-->
+	<!-- Add your site or application content here -->
+	<div id="container">
+		
+		<div id="wrapper" class="slide">
+			
+			
+			<div class="div_logo">
+				<a class="logo"></a>
+				<div class="div_contenido">
+					<form action="menu.html" method="post" id="formulario">
+						<ul>
+							<li><label for="" class="formulario">Usuario</label> <input
+								type="text" class="usuario" id="nombredeusuario"
+								name="nombredeusuario"></li>
+							<li><label for="" class="formulario">Clave</label> <input
+								type="password" class="password" id="clave" name="clave">
+							</li>
+							<li><input type="submit" id="botonLogin">  &nbsp;&nbsp;<input type="button" id="botonLogin" value="Regístrese" onClick="window.location = 'http://proyekta.com.co/proyectaweb/registro/index.html';"></li>
+							<li><a
+								href="http://proyekta.com.co/proyectaweb/recover/index.php"
+								class="btn_pass" taget="_parent">Perdio su password?</a></li>
+						</ul>
+					</form>
+				</div>
+			</div>
+			
+			<!--end opciones slider-->
+		</div>
+	</div>
+	</div>
+	<script>
+		window.jQuery
+				|| document
+						.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')
+	</script>
+	<script type="text/javascript" language="javascript"
+		src="js/jquery.carouFredSel-6.2.1-packed.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			//      Responsive layout, resizing the items
+			$('#foo4').carouFredSel({
+				responsive : true,
+				width : '100%',
+				prev : '#prev2',
+				next : '#next2',
+				pagination : "#pager2",
+				items : {
+					visible : {
+						min : 1,
+						max : 1
+					}
+				}
+			});
+
+			var opcionesSlider = $(".div_opciones_slider");
+			var menuPrincipal = $("#menu");
+			var objscene = $(window).height();
+			$(opcionesSlider).css("top", objscene - 44 + "px");
+			$(menuPrincipal).css("height", objscene + "px");
+		});
+	</script>
+	<script>
+		$('#formulario')
+				.submit(
+						function() {
+
+							// recolecta los valores que inserto el usuario
+							var datosUsuario = $("#nombredeusuario").val()
+							var datosPassword = $("#clave").val()
+
+							archivoValidacion = "http://proyekta.com.co/proyektaapp/server/login.php?jsoncallback=?"
+
+							$
+									.getJSON(archivoValidacion, {
+										usuario : datosUsuario,
+										password : datosPassword
+									})
+									.done(
+											function(respuestaServer) {
+
+												if (respuestaServer.validacion == "ok") {
+
+													/// si la validacion es correcta, muestra la pantalla "home"
+													///$.mobile.changePage("menu.html")
+													localStorage.clear();
+													localStorage.setItem(
+															"usuariolog",
+															respuestaServer.id);
+													localStorage
+															.setItem(
+																	"usernombre",
+																	respuestaServer.nombre);
+													window.location.href = "menu.html";
+
+												} else {
+
+													/// ejecutar una conducta cuando la validacion falla
+													alert(respuestaServer.mensaje)
+												}
+
+											})
+							return false;
+						})
+	</script>
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	<!--script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script-->
+</body>
+</html>

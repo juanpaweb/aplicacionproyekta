@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Proyekta Analyzer</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+<link rel="stylesheet" href="css/stylesheets/style.css">
+<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+
+<!-- Favicons -->
+<link rel="icon" href="img/favicon.png">
+<link rel="appl∫e-touch-icon" href="img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72"
+	href="img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114"
+	href="img/apple-touch-icon-114x114.png">
+<style type="text/css">
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+#containerg {
+	width: 100%;
+	height: 200px;
+	margin: 8px auto;
+	background-color:#0091C5;
+	text-align:center;
+}
+</style>
+<script src="js/Chart.js"></script>
+<script>
+	if (localStorage.getItem("usuariolog") == null) {
+		// alert(localStorage.getItem("usuariolog"))
+		//localStorage.clear();
+		window.location.href = "index.html";
+	}
+</script>
+</head>
+<body>
+	<!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+	<!--menu-->
+	<div id="menu" class="menu-principal">
+		<ul>
+			<li>MENÚ</li>
+			<li><a href="search.html" class="indicadores">Indicadores sector real</a></li>
+			<li><a href="app/index.html" class="analisis">Analisis de
+					crédito</a></li>
+			<li><a href="salir.html" class="analisis" target="_parent">Salir</a></li>
+		</ul>
+	</div>
+	<!--end menu-->
+	<!-- Add your site or application content here -->
+	<div id="container" class="div_contenido_int">
+		<div id="topbar" class="slide">
+			<a id="menu-button">Menu</a> <a id="btn_despliegue_usser"
+				class="img-usser"> <img src="img/img-usser.png" alt="">
+			</a>
+
+
+
+		</div>
+		<div id="wrapper" class="slide">
+			<div class="div_usser">
+				<a><script>
+					document.write(localStorage.getItem("usernombre"))
+				</script></a><a href="" class="close" id="btn_close_usser"></a>
+
+			</div>
+			<div class="div_logo ">
+
+				<div class="div_contenido">
+					<div class="div-contenido-detail">
+						<h1>
+							<script>
+								if (localStorage.getItem("nit") != null) {
+									document.write(localStorage
+											.getItem("nombre"))
+
+								} else {
+									document.write("EMPRESA")
+								}
+							</script>
+						</h1>
+						
+						<div id="containerg"><script>
+						if (localStorage.getItem("consulta") != null) {
+							document.write(localStorage.getItem("consulta")	)	
+
+						} else {
+							document.write("Seleccione una categoria y un indicador.")
+						}
+												
+							</script><canvas id="canvas" ></canvas><script>
+						if (localStorage.getItem("consulta") != null) {
+							document.write("Año")	
+
+						} else {
+							
+						}
+												
+							</script></div>
+						
+						<div>
+							<form name="form1" method="post" action="" id="form1">
+								<ul class="div_selectores">
+									<li>
+										<div class="select_empresas">
+											<select name="select" id="select"
+												onchange="slctryole(this,this.form.select2)">
+												<option>Seleccione</option>
+												<option value="liquidez">Liquidez</option>
+												<option value="endeudamiento">Endeudamiento</option>
+												<option value="rentabilidad">Rentabilidad</option>
+												<option value="corporativos">Corporativos y/o
+													Gereniales</option>
+											</select>
+										</div>
+									</li>
+									<li>
+										<div class="select_empresas">
+
+											<select name="select2" id="select2"
+												onchange="slctryole(this,this.form.select3)">
+												<option>- - - - - -</option>
+											</select>
+
+										</div>
+									</li>
+									<li><input type="submit" value="Ver"></li>
+							</form>
+							</ul>
+						</div>
+<div style="min-height:20px;"><p><span>Min:</span><script>if (localStorage.getItem("min") != null) {
+							document.write(localStorage.getItem("min")	)	
+
+						} </script> &nbsp;&nbsp;&nbsp;- </p></div><div  style="min-height:20px;"><p><span>Med:</span><script>if (localStorage.getItem("med") != null) {
+							document.write(localStorage.getItem("med")	)	
+
+						} </script> &nbsp;&nbsp;Med</p></div><div  style="min-height:20px;"><p><span>Max:</span><script>if (localStorage.getItem("max") != null) {
+							document.write(localStorage.getItem("max")	)	
+
+						} </script> &nbsp;&nbsp;+ </p> </div>
+                                
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	</div>
+	<script>
+		window.jQuery
+				|| document
+						.write(
+								'<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')
+	</script>
+	<script type="text/javascript" language="javascript"
+		src="js/jquery.carouFredSel-6.2.1-packed.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	<!--script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script-->
+	<!--[if IE]>
+    <script type="text/javascript" src="/static/lib/FlashCanvas/bin/flashcanvas.js"></script>
+    <![endif]-->
+	
+	<script type="text/javascript">
+		function slctr(texto, valor) {
+			this.texto = texto
+			this.valor = valor
+		}
+		var liquidez = new Array()
+		liquidez[0] = new slctr('Seleccione')
+		liquidez[1] = new slctr("Capital de trabajo", 'Capital de trabajo')
+		liquidez[2] = new slctr("Capital de trabajo neto operativo KTNO",
+				'Capital de trabajo neto operativo KTNO')
+		liquidez[3] = new slctr("Razón Corriente", 'Razón Corriente')
+		liquidez[4] = new slctr("Prueba Acida Inventarios",
+				'Prueba Acida Inventarios')
+		liquidez[5] = new slctr("Prueba Acida Cartera", 'Prueba Acida Cartera')
+		liquidez[6] = new slctr("Periodo de Rotación de Inventarios PRI",
+				'Periodo de Rotación de Inventarios PRI')
+		liquidez[7] = new slctr("Periodo de Rotación de Cartera PRC",
+				'Periodo de Rotación de Cartera PRC')
+		liquidez[8] = new slctr("Periodo de Rotación de Proveedores PRP",
+				'Periodo de Rotación de Proveedores PRP')
+		liquidez[9] = new slctr("Ciclo de Caja", 'Ciclo de Caja')
+		liquidez[10] = new slctr("Cantidad Optima de Efectivo",
+				'Cantidad Optima de Efectivo')
+		liquidez[11] = new slctr("Cantidad Minima de Efectivo",
+				'Cantidad Minima de Efectivo')
+
+		var endeudamiento = new Array()
+		endeudamiento[0] = new slctr('Seleccione')
+		endeudamiento[1] = new slctr("Nivel de endeudamiento (Total)",
+				'Nivel de endeudamiento (Total)')
+		endeudamiento[2] = new slctr(
+				"Nivel de endeudamiento (Sin Valorizaciones)",
+				'Nivel de endeudamiento (Sin Valorizaciones)')
+		endeudamiento[3] = new slctr(
+				"Nivel de endeudamiento (CxP a Socios) Sup.1",
+				'Nivel de endeudamiento (CxP a Socios) Sup.1')
+		endeudamiento[4] = new slctr(
+				"Nivel de endeudamiento (CxP a Socios) Sup.2",
+				'Nivel de endeudamiento (CxP a Socios) Sup.2')
+		endeudamiento[5] = new slctr("Concentracion endeudamiento corto Plazo",
+				'Concentracion endeudamiento corto Plazo')
+		endeudamiento[6] = new slctr("Impacto de la carga financiera",
+				'Impacto de la carga financiera')
+		endeudamiento[7] = new slctr("Cobertura de intereses",
+				'Cobertura de intereses')
+		endeudamiento[8] = new slctr("Endeudamiento financiero",
+				'Endeudamiento financiero')
+
+		var rentabilidad = new Array()
+		rentabilidad[0] = new slctr('Seleccione')
+		rentabilidad[1] = new slctr("Margen bruto", 'Margen bruto')
+		rentabilidad[2] = new slctr("Margen operacional", 'Margen operacional')
+		rentabilidad[3] = new slctr("Margen neto", 'Margen neto')
+		rentabilidad[4] = new slctr("ROA", 'ROA')
+		rentabilidad[5] = new slctr("ROE", 'ROE')
+
+		var corporativos = new Array()
+		corporativos[0] = new slctr('Seleccione')
+		corporativos[1] = new slctr("Activos netos de Operacion",
+				'Activos netos de Operacion')
+		corporativos[2] = new slctr("EBITDA", 'EBITDA')
+		corporativos[3] = new slctr("NOPAT", 'NOPAT')
+		corporativos[4] = new slctr("Margen EBITDA", 'Margen EBITDA')
+		corporativos[5] = new slctr("Crecimiento en Ventas",
+				'Crecimiento en Ventas')
+		corporativos[6] = new slctr("Cobertura EBITDA", 'Cobertura EBITDA')
+		corporativos[7] = new slctr("Indice de retencion de utilidades",
+				'Indice de retencion de utilidades')
+		corporativos[8] = new slctr("Tasa de crecimiento interno",
+				'Tasa de crecimiento interno')
+		corporativos[9] = new slctr("Tasa de crecimiento sustentable",
+				'Tasa de crecimiento sustentable')
+		corporativos[10] = new slctr("Apalancamiento operacional",
+				'Apalancamiento operacional')
+		corporativos[11] = new slctr("Apalancamiento financiero",
+				'Apalancamiento financiero')
+		corporativos[12] = new slctr("Punto de equilibrio",
+				'Punto de equilibrio')
+		corporativos[13] = new slctr("Z-score (Predictor de quiebra Altman)",
+				'Z-score (Predictor de quiebra Altman)')
+		
+
+		function slctryole(cual, donde) {
+			if (cual.selectedIndex != 0) {
+				donde.length = 0
+				cual = eval(cual.value)
+				for (m = 0; m < cual.length; m++) {
+					var nuevaOpcion = new Option(cual[m].texto);
+					donde.options[m] = nuevaOpcion;
+					if (cual[m].valor != null) {
+						donde.options[m].value = cual[m].valor
+					} else {
+						donde.options[m].value = cual[m].texto
+					}
+				}
+			}
+		}
+	</script>
+	<script>
+		$('#form1')
+				.submit(
+						function() {
+							
+							// captura categoria e indicador
+							categoria = document.getElementById("select").selectedIndex;
+							if (categoria == null || categoria == 0) {
+								alert("Ingrese la categoria" )
+								return false;
+							}
+							indicador = document.getElementById("select2").selectedIndex;
+							if (indicador == null || indicador == 0) {
+								alert("Ingrese el indicador" )
+								return false;
+							}
+							localStorage
+							.setItem(
+									"categorias",
+									categoria);
+							
+							localStorage
+							.setItem(
+									"indicadors",
+									indicador);
+							archivoValidacion = "http://proyekta.com.co/proyektaapp/server/result.php?jsoncallback=?"
+
+							$
+									.getJSON(archivoValidacion, {
+										categoriae : categoria, indicadore:indicador, nit:localStorage.getItem("nit") 
+									})
+									.done(
+											function(respuestaServer) {
+
+												if (respuestaServer.validacion == "ok") {
+
+													/// si retorno datos
+													
+													localStorage
+															.setItem(
+																	"cx",
+																	respuestaServer.cx);
+													localStorage
+													.setItem(
+															"cy",
+															respuestaServer.cy);
+													
+													localStorage
+													.setItem(
+															"simbolo",
+															respuestaServer.simbolo);
+													
+													localStorage
+													.setItem(
+															"consulta",
+															respuestaServer.nombre);
+													localStorage
+													.setItem(
+															"max",
+															respuestaServer.max);
+													localStorage
+													.setItem(
+															"min",
+															respuestaServer.min);
+													localStorage
+													.setItem(
+															"med",
+															respuestaServer.med);
+													
+													
+													
+													window.location.href = "resultados.html";
+													
+													
+
+												} else {
+
+													/// ejecutar una conducta cuando la validacion falla
+													alert(respuestaServer.mensaje)
+												}
+
+											})
+							return false;
+						})
+	</script>
+	
+	<script>
+		var str = localStorage.getItem("cx");
+		var res = str.split(",");
+		var str2 = localStorage.getItem("cy");
+		var res2 = str2.split(",");
+		
+		
+		
+		var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+		var lineChartData = {
+			
+			labels :res,
+			datasets : [
+				{
+					label: "My First dataset",
+					fillColor : "rgba(220,220,220,0.1)",
+					strokeColor : "rgba(220,220,220,1)",
+					pointColor : "rgba(220,220,220,1)",
+					pointStrokeColor : "#fff",
+					pointHighlightFill : "#fff",
+					pointHighlightStroke : "rgba(220,220,220,1)",
+					data : res2
+				}
+			]
+
+		}
+
+	window.onload = function(){
+		var ctx = document.getElementById("canvas").getContext("2d");
+		
+		if(localStorage.getItem("categorias")==2 || localStorage.getItem("categorias")==3){
+			window.myLine = new Chart(ctx).Bar(lineChartData, {
+				bezierCurve: true,
+				 responsive: true,
+				 scaleLabel :localStorage.getItem("simbolo"),
+				 scaleFontColor: "#fff",
+				 tooltipTemplate: localStorage.getItem("simbolo"),
+			    multiTooltipTemplate: localStorage.getItem("simbolo")
+			});
+		}else{
+			window.myLine = new Chart(ctx).Line(lineChartData, {
+				bezierCurve: true,
+				 responsive: true,
+				 scaleLabel :localStorage.getItem("simbolo"),
+				 scaleFontColor: "#fff",
+				 tooltipTemplate: localStorage.getItem("simbolo"),
+				 multiTooltipTemplate: localStorage.getItem("simbolo")
+			});
+		}
+		
+		
+		
+	}
+
+
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,12 @@
+[19-Jan-2015 22:46:38 UTC] PHP Fatal error:  Class 'FPDF' not found in /home/gcgaf/public_html/apppro/pdf.php on line 13
+[19-Jan-2015 22:48:09 UTC] PHP Fatal error:  Class 'FPDF' not found in /home/gcgaf/public_html/apppro/pdf.php on line 13
+[19-Jan-2015 22:51:03 UTC] PHP Fatal error:  Class 'FPDF' not found in /home/gcgaf/public_html/apppro/pdf.php on line 13
+[22-Jan-2015 01:42:55 UTC] PHP Fatal error:  Call to undefined method PDF::Rotate() in /home/gcgaf/public_html/apppro/pdf.php on line 125
+[22-Jan-2015 01:45:47 UTC] PHP Fatal error:  Call to undefined method PDF::Rotate() in /home/gcgaf/public_html/apppro/pdf.php on line 125
+[22-Jan-2015 01:48:31 UTC] PHP Fatal error:  Call to undefined method PDF::Rotate() in /home/gcgaf/public_html/apppro/pdf.php on line 125
+[22-Jan-2015 01:50:13 UTC] PHP Fatal error:  Call to undefined function SetFont() in /home/gcgaf/public_html/apppro/pdf.php on line 118
+[22-Jan-2015 02:01:20 UTC] PHP Fatal error:  Using $this when not in object context in /home/gcgaf/public_html/apppro/pdf.php on line 301
+[22-Jan-2015 02:01:33 UTC] PHP Fatal error:  Using $this when not in object context in /home/gcgaf/public_html/apppro/pdf.php on line 301
+[21-Feb-2015 16:07:52 UTC] PHP Fatal error:  Call to undefined function txtentities() in /home/gcgaf/public_html/apppro/pdf.php on line 583
+[21-Feb-2015 16:10:52 UTC] PHP Fatal error:  Call to undefined function hex2dec() in /home/gcgaf/public_html/apppro/pdf.php on line 631
+[21-Feb-2015 23:04:26 UTC] PHP Fatal error:  Call to undefined function GetX() in /home/gcgaf/public_html/apppro/pdf.php on line 752
